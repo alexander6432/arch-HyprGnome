@@ -1,0 +1,178 @@
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "Aplicaciones";
+	drun-display-format:        "{name}";
+}
+
+/*****----- Global Properties -----*****/
+@import "~/.config/rofi/colors-rofi.rasi"
+
+* {
+    font: "JetBrains Mono Nerd Font 10";
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       683px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px 5px solid;
+    border-radius:               16px;
+    border-color:                @primary;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     25px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @primary;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px 2px solid;
+    border:                      0px 3px solid 3px solid 0px;
+    border-radius:               16px;
+    border-color:                @primary-container;
+    background-color:            @surface-container;
+    text-color:                  @primary;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     12px;
+    border-radius:               16px;
+    background-color:            @primary;
+    text-color:                  @surface;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    padding:                     12px;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Buscar...";
+    placeholder-color:           inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       5;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @primary;
+    background-color:            transparent;
+    text-color:                  @surface;
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @primary;
+    border-radius:               0px;
+    background-color:            @background;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     5px;
+    border:                      0px solid;
+    border-radius:               16px;
+    border-color:                @primary;
+    background-color:            @surface-container;
+    text-color:                  @primary;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            @surface-container;
+    text-color:                  @on-background;
+}
+element alternate.normal {
+    background-color:            @surface-container;
+    text-color:                  @on-background;
+}
+element selected.normal {
+    border:                      0px 5px 0px 5px;
+    border-radius:               16px;
+    border-color:                @on-primary;
+    background-color:            @on-primary-container;
+    text-color:                  @on-primary;
+}
+element-icon {
+    padding:                     0px 0px 0px 10px;
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               16px;
+    border-color:                @error;
+    background-color:            @error-container;
+    text-color:                  @error;
+}
+textbox {
+    background-color:            @background;
+    text-color:                  @primary;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}
+

@@ -1,0 +1,75 @@
+# GLOBAL
+max-history=5
+sort=+priority
+include=~/.config/mako/colors_mako.conf
+
+# BLINDING OPTIONS
+on-button-left=invoke-default-action
+on-button-middle=none
+on-button-right=dismiss
+on-touch=dismiss
+on-notify=none
+
+#STYLE OPTIONS
+font=JetBrainsMono Nerd Font 10
+width=300
+height=200
+outer-margin=10
+margin=10
+padding=10
+border-size=3
+border-radius=10
+icons=1
+max-icon-size=64
+icon-path=""
+icon-location=left
+icon-border-radius=0
+markup=1
+actions=1
+history=1
+#format=<b>%s</b>\n%b Default when grouped: (%g) <b>%s</b>\n%b
+text-alignment=center
+default-timeout=5000
+ignore-timeout=1
+group-by=none
+max-visible=3
+output=""
+layer=overlay
+anchor=top-right
+
+# === URGENCY ===
+[urgency=low]
+default-timeout=2500
+
+[urgency=normal]
+default-timeout=5000
+
+# === APPS ===
+[app-name=volume]
+default-timeout=1500
+group-by=app-name
+
+[app-name=brightness]
+default-timeout=1500
+group-by=app-name
+
+[app-name=gamma]
+default-timeout=1500
+group-by=app-name
+
+[app-name=hyprsunset]
+default-timeout=1500
+group-by=app-name
+
+[app-name=keybind_media]
+default-timeout=1500
+group-by=app-name
+
+[app-name=submaps]
+default-timeout=2500
+group-by=app-name
+
+[app-name=grimblast]
+default-timeout=1500
+group-by=app-name
+

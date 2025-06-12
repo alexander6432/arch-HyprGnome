@@ -1,0 +1,162 @@
+@import url("file:///home/alex/.config/waybar/colors-waybar.css");
+
+* {
+  font-family: JetBrainsMonoNL Nerd Font;
+  font-size: 12px;
+  background: transparent;
+  border: 0px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 5;
+}
+window#waybar {
+  color: @primary;
+  background: linear-gradient(to right, alpha(@primary-container,0.75), alpha(@background,0.5));
+  background-size: cover;
+}
+tooltip {
+  background: @on-secondary-fixed;
+  border: 0px solid @on-secondary-fixed;
+  opacity: 0.85;
+}
+tooltip label {
+  color: @secondary;
+}
+
+@keyframes blink {
+  to {
+    color: @error-container;
+  }
+}
+#battery.charging, #battery.plugged {
+  transition: 0.5s;
+  color: #4DD0E1;
+}
+#battery.good {
+  transition: 0.5s;
+  color: #81C784;
+}
+#battery.warning {
+  transition: 0.5s;
+  color: #FFD54F;
+}
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#keyboard-state label {
+    color: transparent;
+    font-size: 0;
+    padding: 0px;
+    margin: 0px;
+}
+#keyboard-state label.locked {
+    font-size: 12px;
+    color: @tertiary-container;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#tray *{
+  margin: 1px;
+
+}
+#tray  menu{
+  background: @on-secondary-fixed;
+  opacity: 0.9;
+  color: @primary;
+}
+#tray *:hover{
+  color: @tertiary-fixed;
+}
+#workspaces {
+  margin: 2px;
+  border: 1px solid @primary;
+}
+#workspaces button {
+  transition: 0.5s;
+  color: @primary;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 0px;
+}
+#workspaces button.active {
+  color: @secondary-fixed;
+  background: @primary-container;
+}
+#custom-lock:hover {
+  transition: 0.5s;
+  color:  #1976D2;
+}
+#custom-power:hover {
+  transition: 0.5s;
+  color:  #D32F2F;
+}
+#custom-quit:hover {
+  transition: 0.5s;
+  color:  #388E3C;
+}
+#custom-reboot:hover {
+  transition: 0.5s;
+  color:  #FBC02D;
+}
+#custom-lock,
+#custom-power,
+#custom-quit,
+#custom-reboot{
+  transition: 0.5s;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 16px;
+
+}
+#battery,
+#backlight,
+#bluetooth,
+#clock,
+#cpu,
+#idle_inhibitor,
+#memory,
+#network,
+#pulseaudio,
+#temperature {
+  transition: 0.5s;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#bluetooth.connected,
+#idle_inhibitor.activated {
+  transition: 0.5s;
+  color: @tertiary-container;
+}
+#bluetooth.disabled,
+#network.disconnected,
+#pulseaudio.muted,
+#pulseaudio.source-muted,
+#temperature.critical {
+  transition: 0.5s;
+  color: @error;
+}
+#connection:hover,
+#gPower:hover,
+#hardware:hover {
+  background: linear-gradient(to right, alpha(@primary-container,0.5), transparent);
+}
+#battery:hover,
+#backlight:hover,
+#bluetooth:hover,
+#clock:hover,
+#cpu:hover,
+#idle_inhibitor:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#temperature:hover,
+#workspaces button:hover {
+  transition: 0.5s;
+  color: @tertiary;
+}
+

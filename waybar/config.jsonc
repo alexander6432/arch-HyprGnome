@@ -1,0 +1,320 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "width": 1356,
+  "spacing": 3,
+  "margin-top": 5,
+  "margin-bottom": 0,
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "idle_inhibitor",
+    "clock",
+    "tray"
+  ],
+  "modules-right": [
+    "keyboard-state",
+    "group/connection",
+    "pulseaudio",
+    "backlight",
+    "group/hardware",
+    "group/gPower"
+  ],
+  //groups
+  "group/connection": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "connection",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "network",
+      "bluetooth"
+    ]
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "hardware",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "battery",
+      "memory",
+      "temperature",
+      "cpu"
+    ]
+  },
+  "group/gPower": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "gPower",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/quit",
+      "custom/lock",
+      "custom/reboot"
+    ]
+  },
+  // Modules configuration 
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "scroll-step": 5,
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "interval": 20,
+    "states": {
+      "good": 80,
+      "warning": 35,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-alt": "{time} {icon}",
+    "format-charging": "{capacity}% 󰂉",
+    "format-full": "{icon}",
+    "format-good": "{capacity}% {icon}",
+    "format-plugged": "{capacity}% ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": "󰥈 {device_alias} {device_battery_percentage}%",
+    "format-disabled": "󰂲 Desconectado",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager"
+  },
+  "clock": {
+    "format": "{:%I:%M %p} 󰥔 ",
+    "format-alt": "{:%A, %B %d, %Y (%I:%M %p)}  ",
+    "locale": "es_MX.UTF-8",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": true,
+    "on-click": "hyprlock",
+    "tooltip-format": "Bloquear"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": true,
+    "on-click": "shutdown now",
+    "tooltip-format": "Apagar"
+  },
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": true,
+    "on-click": "hyprctl dispatch exit",
+    "tooltip-format": "Cerrar Sesión"
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": true,
+    "on-click": "reboot",
+    "tooltip-format": "Reiniciar"
+  },
+  "hyprland/workspaces": {
+    "show-special": true,
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "tooltip-format": "{name}",
+    "format": "{icon} {windows}  ",
+    "rotate": 0,
+    // "format-window-separator": "\n",
+    "window-rewrite-default": "󱕷",
+    "window-rewrite": {
+      "class<blueman-manager>": "󰂳",
+      "class<code>": "󰨞",
+      "class<firefox>": "󰈹",
+      "class<gimp>": "",
+      "class<google-chrome>": "",
+      "class<org.inkscape.Inkscape>": "",
+      "class<kitty>": "󰞷",
+      "class<krita>": "",
+      "class<libreoffice-startcenter>": "",
+      "class<libreoffice-base>": "",
+      "class<libreoffice-calc>": "",
+      "class<libreoffice-draw>": "",
+      "class<libreoffice-impress>": "",
+      "class<libreoffice-math>": "",
+      "class<libreoffice-writer>": "",
+      "class<org.gnome.Nautilus>": "󰀼",
+      "class<org.gnome.Loupe>": "",
+      "class<pentablet>": "",
+      "class<nm-connection-editor>": "󱚾",
+      "class<org.gnome.FileRoller>": "󰗄",
+      "class<org.libretro.RetroArch>": "󰊖",
+      "class<org.pulseaudio.pavucontrol>": "",
+      "class<spotify>": "󰓇",
+      "class<org.telegram.desktop>": "",
+      "class<waypaper>": "󰸉",
+      "class<org.wezfurlong.wezterm>": "",
+      "class<firefox> title<.*Facebook.*>": "",
+      "class<firefox> title<.*GitHub.*>": "󰊤",
+      "class<firefox> title<.*WhatsApp.*>": "󰖣",
+      "class<firefox> title<.*YouTube.*>": "",
+      "class<Google-chrome> title<.*Facebook.*>": "",
+      "class<Google-chrome> title<.*GitHub.*>": "󰊤",
+      "class<Google-chrome> title<.*WhatsApp.*>": "󰖣",
+      "class<Google-chrome> title<.*Youtube.*>": "",
+      "class<org.wezfurlong.wezterm> title<htop>": "",
+      "class<org.wezfurlong.wezterm> title<.*nvim.*>": "",
+      "class<org.wezfurlong.wezterm> title<.*pacman.*>": "󰮯",
+      "class<org.wezfurlong.wezterm> title<.*yay.*>": "󱑟",
+      "class<org.wezfurlong.wezterm> title<.*flatpak.*>": "",
+      "class<org.wezfurlong.wezterm> title<.*yazi.*>": "󰇥",
+      "class<org.wezfurlong.wezterm> title<.*jazz.*>": "󰇥",
+      "class<org.wezfurlong.wezterm> title<.*Zellij.*>": ""
+    },
+    "format-icons": {
+      // "urgent": "󰀨",
+      // "active": "󰜴",
+      "special": "",
+      "1": "󰼏",
+      "2": "󰼐",
+      "3": "󰼑",
+      "4": "󰼒",
+      "5": "󰼓",
+      "6": "󰼔",
+      "7": "󰼕",
+      "8": "󰼖",
+      "9": "󰼗",
+      "10": "󰿪"
+    }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰨇",
+      "deactivated": "󰶐"
+    }
+  },
+  "keyboard-state": {
+    "interval": 1,
+    "numlock": true,
+    "capslock": true,
+    "format": {
+      "numlock": "",
+      "capslock": "󰪛"
+    }
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{used:0.1f}G/{total:0.1f}G ",
+    "format-alt": "{}% ",
+    "tooltip-format": "{}% "
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "{signalStrength}% ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+    "tooltip-format": "{essid} 󰩠",
+    "format-linked": "{ifname} (No IP) 󰩠",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{bandwidthUpBytes} 󱚻  {bandwidthDownBytes}",
+    "interval": 5
+  },
+  "pulseaudio": {
+    "scroll-step": 10, // %, can be a float
+    "format": "{volume}% {icon}  {format_source}",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth-muted": "󰗿 {icon}  {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰥰",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "max-volume": 125,
+    "on-click": "pavucontrol"
+  },
+  "temperature": {
+    "tooltip": false,
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 10
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "icon-theme": "Star",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "fullscreen",
+    "on-click-right": "close"
+  }
+}

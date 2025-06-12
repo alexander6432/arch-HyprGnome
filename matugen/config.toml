@@ -1,0 +1,23 @@
+[config]
+version_check = false
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/dark/hyprtheme.conf"
+output_path = "~/.config/hypr/hyprtheme.conf"
+post_hook = "hyprctl reload"
+
+[templates.mako]
+input_path = "~/.config/matugen/templates/dark/colors_mako.conf"
+output_path = "~/.config/mako/colors_mako.conf"
+post_hook = "systemctl --user restart mako"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/dark/colors-rofi.rasi"
+output_path = "~/.config/rofi/colors-rofi.rasi"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/dark/colors-waybar.css"
+output_path = "~/.config/waybar/colors-waybar.css"
+post_hook = "killall waybar && waybar &"
+# post_hook = 'pkill -SIGUSR2 waybar'
+

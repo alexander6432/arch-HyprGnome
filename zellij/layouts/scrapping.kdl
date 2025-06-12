@@ -1,0 +1,38 @@
+layout {
+  cwd "~/Documentos/dev/web_scrapping/"
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+  tab name="editor" hide_floating_panes=true focus=true {
+    pane {
+      name "nvim"
+      command "zsh"
+      args "-c" "source ~/Documentos/dev/web_scrapping/.entorno/bin/activate && nvim && exec zsh"
+    }
+    floating_panes {
+      pane {
+        name "entorno python"
+        x "40%"
+        y "5%"
+        width "55%"
+        heigth "50%"
+        command "zsh"
+        args "-c" "source ~/Documentos/dev/web_scrapping/.entorno/bin/activate && exec zsh"
+      }
+    }
+  }
+  tab name="btop" {
+      pane {
+        cwd "/home/alex/"
+        name "btop"
+        command "zsh"
+        args "-c" "btop && exec zsh"
+        }
+    }
+}

@@ -1,0 +1,69 @@
+
+/*  ======= DARK ====== */
+/*  ===== PRIMARY ===== */
+@define-color primary                    {{ colors.primary.dark.hex }};
+@define-color primary-container          {{ colors.primary_container.dark.hex }};
+@define-color primary-fixed              {{ colors.primary_fixed.dark.hex }};
+@define-color primary-fixed-dim          {{ colors.primary_fixed_dim.dark.hex }};
+
+/*  ===== SECONDARY ===== */
+@define-color secondary                  {{ colors.secondary.dark.hex }};
+@define-color secondary-container        {{ colors.secondary_container.dark.hex }};
+@define-color secondary-fixed            {{ colors.secondary_fixed.dark.hex }};
+@define-color secondary-fixed-dim        {{ colors.secondary_fixed_dim.dark.hex }};
+
+/*  ===== TERTIARY ===== */
+@define-color tertiary                   {{ colors.tertiary.dark.hex }};
+@define-color tertiary-container         {{ colors.tertiary_container.dark.hex }};
+@define-color tertiary-fixed             {{ colors.tertiary_fixed.dark.hex }};
+@define-color tertiary-fixed-dim         {{ colors.tertiary_fixed_dim.dark.hex }};
+
+/*  ===== BACKGROUND & SURFACE ===== */ 
+@define-color background                 {{ colors.background.dark.hex }};
+@define-color surface                    {{ colors.surface.dark.hex }};
+@define-color surface-bright             {{ colors.surface_bright.dark.hex }};
+@define-color surface-container          {{ colors.surface_container.dark.hex }};
+@define-color surface-container-high     {{ colors.surface_container_high.dark.hex }};
+@define-color surface-container-highest  {{ colors.surface_container_highest.dark.hex }};
+@define-color surface-container-low      {{ colors.surface_container_low.dark.hex }};
+@define-color surface-container-lowest   {{ colors.surface_container_lowest.dark.hex }};
+@define-color surface-dim                {{ colors.surface_dim.dark.hex }};
+@define-color surface-tint               {{ colors.surface_tint.dark.hex }};
+@define-color surface-variant            {{ colors.surface_variant.dark.hex }};
+
+/*  ===== TEXT COLORS (ON-*) ===== */
+@define-color on-primary                 {{ colors.on_primary.dark.hex }};
+@define-color on-primary-container       {{ colors.on_primary_container.dark.hex }};
+@define-color on-primary-fixed           {{ colors.on_primary_fixed.dark.hex }};
+@define-color on-primary-fixed-variant   {{ colors.on_primary_fixed_variant.dark.hex }};
+@define-color on-secondary               {{ colors.on_secondary.dark.hex }};
+@define-color on-secondary-container     {{ colors.on_secondary_container.dark.hex }};
+@define-color on-secondary-fixed         {{ colors.on_secondary_fixed.dark.hex }};
+@define-color on-secondary-fixed-variant {{ colors.on_secondary_fixed_variant.dark.hex }};
+@define-color on-tertiary                {{ colors.on_tertiary.dark.hex }};
+@define-color on-tertiary-container      {{ colors.on_tertiary_container.dark.hex }};
+@define-color on-tertiary-fixed          {{ colors.on_tertiary_fixed.dark.hex }};
+@define-color on-tertiary-fixed-variant  {{ colors.on_tertiary_fixed_variant.dark.hex }};
+@define-color on-background              {{ colors.on_background.dark.hex }};
+@define-color on-surface                 {{ colors.on_surface.dark.hex }};
+@define-color on-surface-variant         {{ colors.on_surface_variant.dark.hex }};
+
+/*  ===== ERROR COLORS ===== */
+@define-color error                      {{ colors.error.dark.hex }};
+@define-color error-container            {{ colors.error_container.dark.hex }};
+@define-color on-error                   {{ colors.on_error.dark.hex }};
+@define-color on-error-container         {{ colors.on_error_container.dark.hex }};
+
+/*  ===== OUTLINE ===== */
+@define-color outline                    {{ colors.outline.dark.hex }};
+@define-color outline-variant            {{ colors.outline_variant.dark.hex }};
+
+/*  ===== SCRIM & SHADOW ===== */
+@define-color scrim                      {{ colors.scrim.dark.hex }};
+@define-color shadow                     {{ colors.shadow.dark.hex }};
+
+/*  ===== INVERSE ===== */
+@define-color inverse-on-surface         {{ colors.inverse_on_surface.dark.hex }};
+@define-color inverse-primary            {{ colors.inverse_primary.dark.hex }};
+@define-color inverse-surface            {{ colors.inverse_surface.dark.hex }};
+
