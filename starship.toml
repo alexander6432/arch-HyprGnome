@@ -63,7 +63,7 @@ read_only = "󰌾"
 read_only_style = "bg:peach fg:crust"
 truncation_symbol = "…/"
 before_repo_root_style = "bg:peach fg:crust"
-repo_root_style = "bg:peach fg:sky"
+repo_root_style = "bg:peach fg:blue"
 repo_root_format = "[  $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only ]($read_only_style)"
 home_symbol = "󱂵 "
 use_os_path_sep = true
@@ -184,21 +184,21 @@ revert = "REVERTING"
 style = "bg: yellow"
 
 [git_status]
-ahead = "[⇡$count ](bg:yellow)"
-behind = "[⇣$count ](bg:yellow)"
-conflicted = "[=$count ](bg:yellow)"
-deleted = "[✘$count ](bg:yellow)"
+ahead = "[⇡$count ](bg:yellow fg:blue)"
+behind = "[⇣$count ](bg:yellow fg:blue)"
+conflicted = "[=$count ](bg:yellow fg:maroon)"
+deleted = "[✘$count ](bg:yellow fg:mauve)"
 disabled = false
-diverged = "[⇕$count ](bg:yellow)"
+diverged = "[⇕$count ](bg:yellow fg:maroon)"
 ignore_submodules = false
-modified = "[!$count ](bg:yellow)"
-renamed = "[»$count ](bg:yellow)"
-staged = '[+$count ](bg:yellow)'
+modified = "[!$count ](bg:yellow fg:peach)"
+renamed = "[»$count ](bg:yellow fg:mauve)"
+staged = '[+$count ](bg:yellow fg:green)'
 format = '[[($all_status$ahead_behind)](fg:crust bg:yellow)]($style)'
-stashed = "[$$count ](bg:yellow)"
+stashed = "[$$count ](bg:yellow fg:peach)"
 style = "bg:yellow"
-typechanged = "$count ](bg:yellow)"
-untracked = "[?$count ](bg:yellow)"
+typechanged = "$count ](bg:yellow fg:lavender)"
+untracked = "[?$count ](bg:yellow fg:pink)"
 # up_to_date = "[󰚰$count ](bg:yellow)"
 use_git_executable = false
 

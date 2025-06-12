@@ -20,6 +20,7 @@
 /user-dirs.dirs
 /user-dirs.locale
 /hypr/hyprtheme.conf
-/mako/colors-mako.conf
+/mako/colors_mako.conf
 /rofi/colors-rofi.rasi
 /waybar/colors-waybar.css
+/waypaper/
