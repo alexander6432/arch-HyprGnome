@@ -26,8 +26,8 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px 5px solid;
-    border-radius:               16px;
+    border:                      0px 4px 0px 4px solid;
+    border-radius:               4px;
     border-color:                @primary;
     background-color:            @background;
     cursor:                      "default";
@@ -54,7 +54,7 @@ inputbar {
     padding:                     0px;
     border:                      0px 2px solid;
     border:                      0px 3px solid 3px solid 0px;
-    border-radius:               16px;
+    border-radius:               4px;
     border-color:                @primary-container;
     background-color:            @surface-container;
     text-color:                  @primary;
@@ -64,7 +64,7 @@ inputbar {
 prompt {
     enabled:                     true;
     padding:                     12px;
-    border-radius:               16px;
+    border-radius:               4px;
     background-color:            @primary;
     text-color:                  @surface;
 }
@@ -118,11 +118,11 @@ scrollbar {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
-    margin:                      0px;
-    padding:                     5px;
+    spacing:                     8px;
+    margin:                      0px 8px;
+    padding:                     4px;
     border:                      0px solid;
-    border-radius:               16px;
+    border-radius:               4px;
     border-color:                @primary;
     background-color:            @surface-container;
     text-color:                  @primary;
@@ -138,7 +138,7 @@ element alternate.normal {
 }
 element selected.normal {
     border:                      0px 5px 0px 5px;
-    border-radius:               16px;
+    border-radius:               4px;
     border-color:                @on-primary;
     background-color:            @on-primary-container;
     text-color:                  @on-primary;
@@ -163,7 +163,7 @@ element-text {
 error-message {
     padding:                     15px;
     border:                      2px solid;
-    border-radius:               16px;
+    border-radius:               4px;
     border-color:                @error;
     background-color:            @error-container;
     text-color:                  @error;

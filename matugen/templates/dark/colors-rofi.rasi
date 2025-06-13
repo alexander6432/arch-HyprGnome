@@ -20,10 +20,10 @@
   tertiary-fixed-dim:         {{ colors.tertiary_fixed_dim.dark.hex }};
 
 /*  ===== BACKGROUND & SURFACE ===== */
-  background:                 {{ colors.background.dark.hex }}a0;
+  background:                 {{ colors.background.dark.hex }}44;
   surface:                    {{ colors.surface.dark.hex }};
   surface-bright:             {{ colors.surface_bright.dark.hex }};
-  surface-container:          {{ colors.surface_container.dark.hex }};
+  surface-container:          {{ colors.surface_container.dark.hex }}88;
   surface-container-high:     {{ colors.surface_container_high.dark.hex }};
   surface-container-highest:  {{ colors.surface_container_highest.dark.hex }};
   surface-container-low:      {{ colors.surface_container_low.dark.hex }};
