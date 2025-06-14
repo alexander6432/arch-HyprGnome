@@ -6,8 +6,8 @@ local colors = require("colors")
 
 local config = wezterm.config_builder()
 
-config.colors = colors
--- config.color_scheme = "Catppuccin Mocha"
+-- config.colors = colors
+config.color_scheme = "Catppuccin Mocha"
 config.cursor_blink_rate = 500
 config.cursor_thickness = 2
 config.default_cursor_style = "BlinkingBar"
@@ -45,13 +45,13 @@ local function get_opacity_from_title(title)
 	title = title:lower()
 
 	if title:find("nvim") then
-		return 0.85
+		return 0.9
 	elseif title:find("btop") then
 		return 0.5
 	elseif title:find("yazi") or title:find("jazz") then
-		return 0.67
+		return 0.8
 	else
-		return 0.75
+		return 0.7
 	end
 end
 

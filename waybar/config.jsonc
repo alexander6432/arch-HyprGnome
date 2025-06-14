@@ -214,7 +214,7 @@
       "class<org.wezfurlong.wezterm> title<htop>": "",
       "class<org.wezfurlong.wezterm> title<.*nvim.*>": "",
       "class<org.wezfurlong.wezterm> title<.*pacman.*>": "󰮯",
-      "class<org.wezfurlong.wezterm> title<.*yay.*>": "󱑟",
+      "class<org.wezfurlong.wezterm> title<.*paru.*>": "󱑟",
       "class<org.wezfurlong.wezterm> title<.*flatpak.*>": "",
       "class<org.wezfurlong.wezterm> title<.*yazi.*>": "󰇥",
       "class<org.wezfurlong.wezterm> title<.*jazz.*>": "󰇥",

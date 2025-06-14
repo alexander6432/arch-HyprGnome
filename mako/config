@@ -27,7 +27,7 @@ icon-border-radius=0
 markup=1
 actions=1
 history=1
-#format=<b>%s</b>\n%b Default when grouped: (%g) <b>%s</b>\n%b
+format=<b>%s</b>\n%b
 text-alignment=center
 default-timeout=5000
 ignore-timeout=1
@@ -37,39 +37,39 @@ output=""
 layer=overlay
 anchor=top-right
 
-# === URGENCY ===
-[urgency=low]
-default-timeout=2500
-
-[urgency=normal]
-default-timeout=5000
-
 # === APPS ===
 [app-name=volume]
 default-timeout=1500
 group-by=app-name
+format=<b>%s</b>\n%b
 
 [app-name=brightness]
 default-timeout=1500
 group-by=app-name
+format=<b>%s</b>\n%b
 
 [app-name=gamma]
 default-timeout=1500
 group-by=app-name
+format=<b>%s</b>\n%b
 
 [app-name=hyprsunset]
 default-timeout=1500
 group-by=app-name
+format=<b>%s</b>\n%b
 
 [app-name=keybind_media]
 default-timeout=1500
 group-by=app-name
+format=<b>%s</b>\n%b
 
 [app-name=submaps]
 default-timeout=2500
 group-by=app-name
+format=<b>%s</b>\n%b
 
 [app-name=grimblast]
 default-timeout=1500
 group-by=app-name
+format=<b>%s</b>\n%b
 
