@@ -1,6 +1,6 @@
 #!/bin/bash
 # Ruta a tu archivo .conf (corregida)
-CONFIG_FILE="$HOME/.config/hypr/hyprtheme.conf"
+CONFIG_FILE="$HOME/.config/hypr/hyprborder.conf"
 
 # Función para obtener el valor rgba de una variable
 get_color() {
@@ -9,11 +9,12 @@ get_color() {
 }
 
 # Obtener colores
-active_border="$(get_color on_error)"
+active_border="$(get_color primary_hue180)"
 
 # Aplicar colores a Hyprland
 hyprctl keyword general:border_size 3
 hyprctl keyword general:col.active_border "$active_border"
+hyprctl keyword decoration:shadow:enabled "true"
 hyprctl keyword decoration:shadow:color "$active_border"
 hyprctl keyword decoration:shadow:range 10
 hyprctl keyword decoration:shadow:render_power 10

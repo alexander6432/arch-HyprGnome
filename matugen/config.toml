@@ -1,6 +1,10 @@
 [config]
 version_check = false
 
+[templates.hyprborder]
+input_path = "~/.config/matugen/templates/dark/hyprborder.conf"
+output_path = "~/.config/hypr/hyprborder.conf"
+
 [templates.hyprland]
 input_path = "~/.config/matugen/templates/dark/hyprtheme.conf"
 output_path = "~/.config/hypr/hyprtheme.conf"
