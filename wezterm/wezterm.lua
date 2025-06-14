@@ -6,8 +6,8 @@ local colors = require("colors")
 
 local config = wezterm.config_builder()
 
--- config.colors = colors
-config.color_scheme = "Catppuccin Mocha"
+config.colors = colors
+-- config.color_scheme = "Catppuccin Mocha"
 config.cursor_blink_rate = 500
 config.cursor_thickness = 2
 config.default_cursor_style = "BlinkingBar"
