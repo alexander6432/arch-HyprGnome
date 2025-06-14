@@ -7,7 +7,7 @@
   border: 0px;
   margin-left: 1px;
   margin-right: 1px;
-  border-radius: 4;
+  border-radius: 4px;
 }
 window#waybar {
   color: @primary;

@@ -21,3 +21,7 @@ output_path = "~/.config/waybar/colors-waybar.css"
 post_hook = "killall waybar && waybar &"
 # post_hook = 'pkill -SIGUSR2 waybar'
 
+[templates.wezterm]
+input_path = "~/.config/matugen/templates/dark/colors_wezterm.lua"
+output_path = "~/.config/wezterm/colors_wezterm.lua"
+
