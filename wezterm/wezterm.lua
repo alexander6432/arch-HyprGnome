@@ -6,8 +6,64 @@ local colors = require("colors")
 
 local config = wezterm.config_builder()
 
-config.colors = colors
--- config.color_scheme = "Catppuccin Mocha"
+-- Detectar el entorno de escritorio
+local desktop_env = os.getenv("XDG_SESSION_DESKTOP") or os.getenv("XDG_CURRENT_DESKTOP") or ""
+
+-- Normaliza a minúsculas
+desktop_env = string.lower(desktop_env)
+
+-- Asignar el tema según el entorno detectado
+if desktop_env:find("hyprland") then
+	config.colors = colors
+	config.window_background_opacity = 0.9
+else
+	config.color_scheme = "Catppuccin Mocha"
+
+	local function get_opacity_from_title(title)
+		if not title then
+			return 0.75
+		end
+		title = title:lower()
+
+		if title:find("nvim") then
+			return 0.9
+		elseif title:find("btop") then
+			return 0.5
+		elseif title:find("yazi") or title:find("jazz") then
+			return 0.8
+		else
+			return 0.7
+		end
+	end
+
+	wezterm.on("update-right-status", function(window, pane)
+		local process_name = pane:get_foreground_process_name()
+		local overrides = window:get_config_overrides() or {}
+		local title = window:active_pane():get_title()
+
+		local opacity = 0.75
+
+		if process_name then
+			local prog = process_name:match("([^/\\]+)$")
+
+			if prog == "zellij" then
+				opacity = get_opacity_from_title(title)
+			elseif prog == "nvim" then
+				opacity = 0.85
+			elseif prog == "htop" then
+				opacity = 0.5
+			elseif prog == "yazi" then
+				opacity = 0.67
+			end
+		end
+
+		if overrides.window_background_opacity ~= opacity then
+			overrides.window_background_opacity = opacity
+			window:set_config_overrides(overrides)
+		end
+	end)
+end
+
 config.cursor_blink_rate = 500
 config.cursor_thickness = 2
 config.default_cursor_style = "BlinkingBar"
@@ -36,50 +92,5 @@ config.scrollback_lines = 700
 config.text_background_opacity = 1
 config.tab_max_width = 20
 config.use_fancy_tab_bar = true
-config.window_background_opacity = 0.9
-
-local function get_opacity_from_title(title)
-	if not title then
-		return 0.75
-	end
-	title = title:lower()
-
-	if title:find("nvim") then
-		return 0.9
-	elseif title:find("btop") then
-		return 0.5
-	elseif title:find("yazi") or title:find("jazz") then
-		return 0.8
-	else
-		return 0.7
-	end
-end
-
-wezterm.on("update-right-status", function(window, pane)
-	local process_name = pane:get_foreground_process_name()
-	local overrides = window:get_config_overrides() or {}
-	local title = window:active_pane():get_title()
-
-	local opacity = 0.75
-
-	if process_name then
-		local prog = process_name:match("([^/\\]+)$")
-
-		if prog == "zellij" then
-			opacity = get_opacity_from_title(title)
-		elseif prog == "nvim" then
-			opacity = 0.85
-		elseif prog == "htop" then
-			opacity = 0.5
-		elseif prog == "yazi" then
-			opacity = 0.67
-		end
-	end
-
-	if overrides.window_background_opacity ~= opacity then
-		overrides.window_background_opacity = opacity
-		window:set_config_overrides(overrides)
-	end
-end)
 
 return config

@@ -23,4 +23,8 @@ function fish_prompt
     starship prompt
 end
 
-starship init fish | source
+if string match -q "*hyprland*" "$XDG_SESSION_DESKTOP"
+    set -gx STARSHIP_CONFIG ~/.config/hyprship.toml
+else
+    starship init fish | source
+end

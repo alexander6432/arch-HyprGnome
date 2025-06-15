@@ -1,0 +1,248 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](green)\
+$os\
+$username\
+[](bg:yellow fg:green)\
+$directory\
+[](bg:red fg:yellow)\
+$git_branch\
+$git_commit\
+$git_metrics\
+$git_state\
+$git_status\
+[](bg:purple fg:red)\
+$dart\
+$golang\
+$java\
+$kotlin\
+$lua\
+$nodejs\
+$python\
+$rust\
+[](bg:blue fg:purple)\
+$conda\
+$docker_context\
+[](bg:cyan fg:blue)\
+$time\
+[ ](fg:cyan)\
+$cmd_duration\
+$line_break\
+$shell\
+$sudo\
+$character"""
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+[cmd_duration]
+show_milliseconds = false
+format = "  en $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time = 1000
+min_time_to_notify = 30000
+
+[directory]
+truncation_length = 5
+truncate_to_repo = false
+format = "[ $path]($style)[$read_only ]($read_only_style)"
+style = "bg:yellow fg:black"
+disabled = false
+read_only = " 󰌾"
+read_only_style = "bg:yellow fg:black"
+truncation_symbol = "…/"
+before_repo_root_style = "bg:yellow fg:black"
+repo_root_style = "bg:yellow fg:bold black"
+repo_root_format = "[  $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only ]($read_only_style)"
+home_symbol = "󱂵 "
+use_os_path_sep = true
+fish_style_pwd_dir_length = 0
+use_logical_path = true
+
+[directory.substitutions]
+"Documents" = "󰲂 "
+"Downloads" = "󰉍 "
+"Music" = "󱍙 "
+"Pictures" = "󰉏 "
+"Videos" = ""
+"Documentos" = "󰈙 "
+"Descargas" = "󰉍 "
+"Música" = "󱍙 "
+"Imágenes" = "󰉏 "
+"dev" = "󰲋 "
+"Vídeos" = ""
+
+[line_break]
+disabled = false
+
+[os]
+disabled = false
+style = "bg:green fg:black"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+
+[shell]
+bash_indicator = ""
+cmd_indicator = ""
+disabled = false
+fish_indicator = '󰈺'
+format = "[$indicator]($style) "
+powershell_indicator = "󰨊"
+style = "fg:bold cyan"
+unknown_indicator = ""
+zsh_indicator = '\$_'
+
+[sudo]
+allow_windows = false
+disabled = false
+format = "[$symbol]($style) "
+style = "fg:bold cyan"
+symbol = "󱅨"
+
+[time]
+disabled = false
+time_format = "%I:%M %p"
+style = "bg:lavender"
+format = '[[   $time ](fg:black bg:cyan)]($style)'
+
+[username]
+show_always = true
+style_user = "bg:green fg:black"
+style_root = "bg:green fg:black"
+format = '[ $user]($style)'
+
+[git_branch]
+always_show_remote = false
+disabled = false
+ignore_branches = []
+only_attached = false
+truncation_length = 9223372036854775807
+truncation_symbol = "…"
+symbol = ""
+style = "bg:red"
+format = '[[ $symbol $branch(:$remote_branch) ](fg:black bg:red)]($style)'
+
+[git_commit]
+commit_hash_length = 7
+disabled = false
+format = "[($hash$tag) ]($style)"
+only_detached = true
+style = "bg:red"
+tag_disabled = true
+tag_max_candidates = 0
+tag_symbol = " 🏷 "
+
+[git_metrics]
+added_style = "bg:red"
+deleted_style = "bg:red"
+disabled = true
+format = "([+$added ]($added_style))([-$deleted ]($deleted_style))"
+ignore_submodules = false
+only_nonzero_diffs = true
+
+[git_state]
+am = "AM"
+am_or_rebase = "AM/REBASE"
+bisect = "BISECTING"
+cherry_pick = "CHERRY-PICKING"
+disabled = false
+format = "([$state( $progress_current/$progress_total) ]($style))"
+merge = "MERGING"
+rebase = "REBASING"
+revert = "REVERTING"
+style = "bg:red"
+
+[git_status]
+ahead = "[⇡$count ](bg:red fg:#1e66f5)"
+behind = "[⇣$count ](bg:red fg:#04a5e5)"
+conflicted = "[=$count ](bg:red fg:#d20f39)"
+deleted = "[✘$count ](bg:red fg:#e64553)"
+disabled = false
+diverged = "[⇕$count ](bg:red fg:#fe640b)"
+ignore_submodules = false
+modified = "[!$count ](bg:red fg:#df8e1d)"
+renamed = "[»$count ](bg:red fg:#8839ef)"
+staged = '[+$count ](bg:red fg:#40a02b)'
+format = '[[($all_status$ahead_behind)](fg:black bg:red)]($style)'
+stashed = "[$$count ](bg:red fg:peach)"
+style = "bg:red"
+typechanged = "$count ](bg:red fg:#209fb5)"
+untracked = "[?$count ](bg:red fg:#ea76cb)"
+# up_to_date = "[󰚰$count ](bg:red fg:white)"
+use_git_executable = false
+
+[conda]
+symbol = "  "
+style = "fg:black bg:blue"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
+
+[docker_context]
+symbol = ""
+style = "fg:black bg:blue"
+format = '[[ $symbol( $context) ](fg:black bg:blue)]($style)'
+
+[dart]
+symbol = " "
+style = "bg:purple"
+format = '[[ $symbol( $version) ](fg:black bg:purple)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:purple"
+format = '[[ $symbol( $version) ](fg:black bg:purple)]($style)'
+
+[java]
+symbol = " "
+style = "bg:purple"
+format = '[[ $symbol( $version) ](fg:black bg:purple)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:purple"
+format = '[[ $symbol( $version) ](fg:black bg:purple)]($style)'
+
+[lua]
+symbol = ""
+style = "bg:purple"
+format = '[[ $symbol( $version) ](fg:black bg:purple)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:purple"
+format = '[[ $symbol( $version) ](fg:black bg:purple)]($style)'
+
+[python]
+symbol = ""
+style = "bg:purple"
+format = '[[ $symbol( $version)(\( $virtualenv\)) ](fg:black bg:purple)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:purple"
+format = '[[ $symbol( $version) ](fg:black bg:purple)]($style)'
+
