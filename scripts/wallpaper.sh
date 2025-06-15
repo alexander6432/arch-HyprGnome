@@ -114,3 +114,15 @@ MONITOR_PID=$!
 
 # Esperar a que termine Waypaper
 wait $WAYPAPER_PID
+
+# Si matugen está en ejecución, esperar hasta 5 segundos
+WAIT_TIME=0
+MATUGEN_LOCK="/tmp/matugen_processing.lock"
+
+while [ -f "$MATUGEN_LOCK" ] && [ $WAIT_TIME -lt 5 ]; do
+  sleep 1
+  WAIT_TIME=$((WAIT_TIME + 1))
+done
+
+# Ahora sí limpiar y salir
+cleanup
