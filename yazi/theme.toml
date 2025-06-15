@@ -19,7 +19,7 @@ light = ""
 # : Manager {{{
 
 [mgr]
-cwd = { fg = "cyan" }
+cwd = { fg = "lightcyan" }
 
 # Hovered
 hovered         = { reversed = true }
@@ -30,10 +30,10 @@ find_keyword  = { fg = "yellow", bold = true, italic = true, underline = true }
 find_position = { fg = "magenta", bg = "reset", bold = true, italic = true }
 
 # Marker
-marker_copied   = { fg = "lightgreen",  bg = "lightgreen" }
-marker_cut      = { fg = "lightred",    bg = "lightred" }
-marker_marked   = { fg = "lightcyan",   bg = "lightcyan" }
-marker_selected = { fg = "lightyellow", bg = "lightyellow" }
+marker_copied   = { fg = "lightgreen",   bg = "lightgreen" }
+marker_cut      = { fg = "lightred",     bg = "lightred" }
+marker_marked   = { fg = "lightcyan",    bg = "lightcyan" }
+marker_selected = { fg = "lightmagenta", bg = "lightmagenta" }
 
 # Tab
 tab_active   = { reversed = true }
@@ -43,11 +43,11 @@ tab_width    = 1
 # Count
 count_copied   = { fg = "white", bg = "green" }
 count_cut      = { fg = "white", bg = "red" }
-count_selected = { fg = "white", bg = "yellow" }
+count_selected = { fg = "white", bg = "magenta" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "gray" }
+border_style  = { fg = "darkgray" }
 
 # Highlighting
 syntect_theme = ""
@@ -58,16 +58,16 @@ syntect_theme = ""
 # : Mode {{{
 
 [mode]
-normal_main = { bg = "blue", bold = true }
-normal_alt  = { fg = "blue", bg = "gray" }
+normal_main = { bg = "cyan", bold = true }
+normal_alt  = { fg = "cyan", bg = "darkgray" }
 
 # Select mode
-select_main = { bg = "red", bold = true }
-select_alt  = { fg = "red", bg = "gray" }
+select_main = { bg = "magenta", bold = true }
+select_alt  = { fg = "magenta", bg = "darkgray" }
 
 # Unset mode
 unset_main = { bg = "red", bold = true }
-unset_alt  = { fg = "red", bg = "gray" }
+unset_alt  = { fg = "red", bg = "darkgray" }
 
 # : }}}
 
@@ -88,7 +88,7 @@ perm_exec  = { fg = "cyan" }
 
 # Progress
 progress_label  = { bold = true }
-progress_normal = { fg = "blue", bg = "black" }
+progress_normal = { fg = "cyan", bg = "black" }
 progress_error  = { fg = "red", bg = "black" }
 
 # : }}}
@@ -111,8 +111,8 @@ separator_style = { fg = "darkgray" }
 # : Confirmation {{{
 
 [confirm]
-border     = { fg = "blue" }
-title      = { fg = "blue" }
+border     = { fg = "cyan" }
+title      = { fg = "cyan" }
 content    = {}
 list       = {}
 btn_yes    = { reversed = true }
@@ -125,11 +125,11 @@ btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 # : Spotter {{{
 
 [spot]
-border = { fg = "blue" }
-title  = { fg = "blue" }
+border = { fg = "cyan" }
+title  = { fg = "cyan" }
 
 # Table
-tbl_col  = { fg = "blue" }
+tbl_col  = { fg = "cyan" }
 tbl_cell = { fg = "yellow", reversed = true }
 
 # : }}}
@@ -153,7 +153,7 @@ icon_error = ""
 # : Picker {{{
 
 [pick]
-border   = { fg = "blue" }
+border   = { fg = "cyan" }
 active   = { fg = "magenta", bold = true }
 inactive = {}
 
@@ -163,7 +163,7 @@ inactive = {}
 # : Input {{{
 
 [input]
-border   = { fg = "blue" }
+border   = { fg = "cyan" }
 title    = {}
 value    = {}
 selected = { reversed = true }
@@ -174,7 +174,7 @@ selected = { reversed = true }
 # : Completion {{{
 
 [cmp]
-border   = { fg = "blue" }
+border   = { fg = "cyan" }
 active   = { reversed = true }
 inactive = {}
 
@@ -189,7 +189,7 @@ icon_command = ""
 # : Task manager {{{
 
 [tasks]
-border  = { fg = "blue" }
+border  = { fg = "cyan" }
 title   = {}
 hovered = { fg = "magenta", underline = true }
 
@@ -237,7 +237,7 @@ rules = [
 
 	# Fallback
 	# { name = "*", fg = "white" },
-	{ name = "*/", fg = "blue" }
+	{ name = "*/", fg = "cyan" }
 ]
 
 # : }}}
