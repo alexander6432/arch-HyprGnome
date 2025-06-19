@@ -28,7 +28,7 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 Abrir = [
-	{ run = 'xdg-open "$1', orphan = true, desc = "Abrir", for = "linux" },
+	{ run = 'xdg-open "$1"', orphan = true, desc = "Abrir", for = "linux" },
 ]
 Editar = [
 	{ run = 'nvim "$@"', desc = "Editar con neovim", block = true,                for = "linux" },
@@ -46,6 +46,9 @@ Imagen = [
   { run = 'gimp "$@"',     orphan = true, desc = "GIMP",     for = "linux" },
   { run = 'inkscape "$@"', orphan = true, desc = "Inkscape", for = "linux" },
 ]
+LibreOffice = [
+	{ run = 'libreoffice "$@"', orphan = true, desc = "LibreOffice", for = "linux" },
+]
 Pdf = [
 	{ run = 'evince "$@"', orphan = true, desc = "Visor de Pdf", for = "linux" },
 ]
@@ -57,21 +60,25 @@ Reproducir = [
 rules = [
 	# Folder
 	{ name = "*/", use = [ "Explorador", "Editar", "Abrir" ] },
-	# Archive
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "Extraer", "Explorador" ] },
+	# Text
+	{ mime = "text/*", use = [ "Editar", "Explorador" ] },
 	# Image
 	{ mime = "image/*", use = [ "Imagen", "Explorador" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "Reproducir", "Explorador" ] },
+	# Archive
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "Extraer", "Explorador" ] },
 	# JSON
 	{ mime = "application/{json,ndjson}", use = [ "Editar", "Explorador" ] },
 	{ mime = "*/javascript", use = [ "Editar", "Explorador" ] },
 	# PDF
 	{ mime = "application/pdf", use = [ "Pdf", "Explorador" ] },
-	# Text
-	{ mime = "text/*", use = [ "Editar", "Explorador" ] },
 	# Empty file
 	{ mime = "inode/empty", use = [ "Editar", "Explorador" ] },
+	# LibreOffice
+  { name = "*.{odt,ott,fodt,ods,ots,fods,odp,otp,fodp,odg,otg,fodg,odf,odb}", use = [ "LibreOffice", "Explorador" ] },
+  { name = "*.{doc,docx,dot,dotx,docm,dotm,rtf,xls,xlsx,xlw,xlt,xlsm,xltx,xltm,xlsb,ppt,pptx,pps,ppsx,pot,potx,pptm,potm}", use = [ "LibreOffice", "Explorador" ] },
+  { name = "*.{csv,txt,wk1,wks,123,dif,dbf,slk,wb2,numbers,htm,html,xml,sxw,sxc,sxi,sxd,sdc,vor,uos,uof}", use = [ "LibreOffice", "Explorador" ] },
 	# Fallback
 	{ name = "*", use = [ "Abrir", "Explorador" ] },
 ]
@@ -198,7 +205,7 @@ shell_offset = [ 0, 2, 50, 3 ]
 
 [confirm]
 # trash
-trash_title 	= "¿Mover {n} archivo{s} seleccionado{s}?"
+trash_title 	= "¿Mover a la papelera {n} archivo{s} seleccionado{s}?"
 trash_origin	= "center"
 trash_offset	= [ 0, 0, 70, 20 ]
 
