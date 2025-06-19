@@ -27,39 +27,49 @@ ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
+Abrir = [
+	{ run = 'xdg-open "$1', orphan = true, desc = "Abrir", for = "linux" },
+]
 Editar = [
 	{ run = 'nvim "$@"', desc = "Editar con neovim", block = true,                for = "linux" },
 	{ run = 'nano "$@"', desc = "Editar con nano",   block = true,                for = "linux" },
-	{ run = 'code "$@"', desc = "Editar con VScode", block = true, orphan = true, for = "linux" },
-]
-Abrir = [
-	{ run = 'xdg-open "$@', orphan = true, desc = "Abrir", for = "linux" },
+	{ run = 'code "$@"', desc = "VScode", block = true, orphan = true, for = "linux" },
 ]
 Explorador = [
-	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Nautilus", for = "linux" },
+	{ run = 'xdg-open "$(dirname "$1")"', desc = "Explorador", for = "linux" },
 ]
 Extraer = [
-	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
+	{ run = 'ya pub extract --list "$@"', desc = "Extraer aquí", for = "linux" },
+]
+Imagen = [
+  { run = 'loupe "$@"',    orphan = true, desc = "Visor de imágenes",    for = "linux" },
+  { run = 'gimp "$@"',     orphan = true, desc = "GIMP",     for = "linux" },
+  { run = 'inkscape "$@"', orphan = true, desc = "Inkscape", for = "linux" },
+]
+Pdf = [
+	{ run = 'evince "$@"', orphan = true, desc = "Visor de Pdf", for = "linux" },
 ]
 Reproducir = [
-	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = 'totem "$@"', orphan = true, desc = "Reproductor", for = "linux" },
 ]
 
 [open]
 rules = [
 	# Folder
 	{ name = "*/", use = [ "Explorador", "Editar", "Abrir" ] },
-	# Text
-	{ mime = "text/*", use = [ "Editar", "Explorador" ] },
-	# Image
-	{ mime = "image/*", use = [ "Abrir", "Explorador" ] },
-	# Media
-	{ mime = "{audio,video}/*", use = [ "Reproducir", "Explorador" ] },
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "Extraer", "Explorador" ] },
+	# Image
+	{ mime = "image/*", use = [ "Imagen", "Explorador" ] },
+	# Media
+	{ mime = "{audio,video}/*", use = [ "Reproducir", "Explorador" ] },
 	# JSON
 	{ mime = "application/{json,ndjson}", use = [ "Editar", "Explorador" ] },
 	{ mime = "*/javascript", use = [ "Editar", "Explorador" ] },
+	# PDF
+	{ mime = "application/pdf", use = [ "Pdf", "Explorador" ] },
+	# Text
+	{ mime = "text/*", use = [ "Editar", "Explorador" ] },
 	# Empty file
 	{ mime = "inode/empty", use = [ "Editar", "Explorador" ] },
 	# Fallback
@@ -70,7 +80,6 @@ rules = [
 micro_workers    = 10
 macro_workers    = 10
 bizarre_retry    = 3
-# image_alloc      = 536870912  # 512MB
 image_alloc      = 134217728  # 128MB
 image_bound      = [ 5000, 5000 ]
 suppress_preload = false
@@ -138,6 +147,16 @@ previewers = [
 	# Fallback
 	{ name = "*", run = "file" },
 ]
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"
 
 [input]
 cursor_blink = false
