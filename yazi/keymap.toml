@@ -89,12 +89,13 @@ keymap = [
   { on = "Z",         run = "plugin zoxide",               desc = "Saltar a una carpeta usando zoxide" },
 
 	# Linemode
-  { on = [ "m", "s" ], run = "linemode size",        desc = "Modo de línea: Tamaño" },
-  { on = [ "m", "p" ], run = "linemode permissions", desc = "Modo de línea: Permisos" },
-  { on = [ "m", "b" ], run = "linemode btime",       desc = "Modo de línea: Fecha de creación (btime)" },
-  { on = [ "m", "m" ], run = "linemode mtime",       desc = "Modo de línea: Fecha de modificación (mtime)" },
-  { on = [ "m", "o" ], run = "linemode owner",       desc = "Modo de línea: Propietario" },
-  { on = [ "m", "n" ], run = "linemode none",        desc = "Modo de línea: Ninguno" },
+  { on = [ "m", "s" ], run = "linemode size",           desc = "Información: Tamaño" },
+  { on = [ "m", "p" ], run = "linemode permissions",    desc = "Información: Permisos" },
+  { on = [ "m", "b" ], run = "linemode btime",          desc = "Información: Fecha de creación" },
+  { on = [ "m", "m" ], run = "linemode mtime",          desc = "Información: Fecha de modificación" },
+  { on = [ "m", "o" ], run = "linemode owner",          desc = "Información: Propietario" },
+  { on = [ "m", "n" ], run = "linemode none",           desc = "Información: Ninguno" },
+  { on = [ "m", "t" ], run = "linemode size_and_mtime", desc = "Información: tamaño y fecha de creación" },
 
 	# Copy
   { on = [ "c", "c" ], run = "copy path",             desc = "Copiar la ruta del archivo" },
@@ -127,9 +128,9 @@ keymap = [
 	{ on = [ ",", "r" ], run = "sort random --reverse=no",                      desc = "Ordenar aleatoriamente" },
 
 	# Goto
-	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Ir al directorio home" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Ir ~/.config" },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Ir ~/Downloads" },
+	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Ir al directorio Principal" },
+	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Ir a la configuraciones" },
+	{ on = [ "g", "d" ],       run = "cd ~/Descargas",   desc = "Ir Descargas" },
   { on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Saltar de forma interactiva" },
   { on = [ "g", "f" ],       run = "follow",           desc = "Seguir el enlace simbólico seleccionado" },
 
