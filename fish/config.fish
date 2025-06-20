@@ -3,6 +3,8 @@ set fish_greeting #Escribe cualquier cosa aquí
 if status is-interactive
 end
 
+zoxide init fish | source
+
 alias zzz='zellij'
 
 function jazz

@@ -13,5 +13,10 @@ use = "macydnah/office"
 rev = "4002d36"
 hash = "9c68763dd4f2799f7cfee1e9c3e819a9"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "86d28e4"
+hash = "b3f1d6ec3721d4061aad5f69cddb0cf9"
+
 [flavor]
 deps = []

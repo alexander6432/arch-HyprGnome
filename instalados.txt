@@ -1,0 +1,37 @@
+*grimblast-git
+*matugen-bin
+*waypaper
+7zip
+blueman
+brightnessctl
+btop
+fastfetch
+fd
+fish
+fzf
+hypridle
+hyprland
+hyprlock
+hyprpicker
+hyprsunset
+inotify-tools
+lazygit
+mako
+matugen
+neovim
+nwg-look
+pavucontrol
+polkit-gnome
+ripgrep
+rofi-wayland
+swww
+trash-cli
+waybar
+xdg-desktop-portal-hyprland
+yazi
+zellij
+zoxide
+
+ sudo nano /etc/sysctl.d/99-swappiness.conf
+ vm.swappiness=10
+
