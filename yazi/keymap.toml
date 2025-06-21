@@ -6,6 +6,8 @@ keymap = [
   # Trash
   { on = [ "T", "t", ], run = [ "tab_create", "cd ~/.local/share/Trash/files",], desc = "Ir a la papelera" },
   { on = [ "T", "r", ], run = 'plugin trash',                                    desc = "Restaurar archivo de la papelera" },
+  # Plugin Mount
+  { on = "M", run = "plugin mount", desc = "Discos" },
 
 	{ on = "<Esc>", run = "escape",             desc = "Salir del modo visual, Limpiar selección, o Cancelar busqueda" },
 	{ on = "<C-[>", run = "escape",             desc = "Salir del modo visual, Limpiar selección, o Cancelar busqueda" },
@@ -13,13 +15,6 @@ keymap = [
 	{ on = "Q",     run = "quit --no-cwd-file", desc = "Salir sin mantener ruta" },
 	{ on = "<C-c>", run = "close",              desc = "Cerrar pestaña, or Salir si es única pestaña" },
 	{ on = "<C-z>", run = "suspend",            desc = "Suspender the proceso" },
-
-  # Plugin Mount
-  { on = "x", run = "plugin mount --args='mount'",   desc = "Montar disco" },
-  { on = "u", run = "plugin mount --args='unmount'", desc = "Desmontar disco" },
-  { on = "e", run = "plugin mount --args='eject'",   desc = "Expulsar disco" },
-  { on = "q", run = "plugin mount --args='quit'",    desc = "Salir del menú discos" },
-  { on = "M", run = "plugin mount",                  desc = "Discos" },
 
 	# Hopping
 	{ on = "k", run = "arrow prev", desc = "Anterior archivo" },
